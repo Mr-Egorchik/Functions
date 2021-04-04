@@ -1,6 +1,8 @@
 package functions.meta;
 
 import functions.Function;
+import functions.basic.Const;
+
 //сумма функций
 public class Sum implements Function {
     private final Function f, g;
@@ -28,6 +30,17 @@ public class Sum implements Function {
 
     @Override
     public String toString() {
+        if(f instanceof Const && g instanceof Const) {
+            StringBuilder s = new StringBuilder();
+            s.append((((Const) f).getValue() + ((Const) g).getValue()));
+            return s.toString();
+        }
+        if (f instanceof Const && ((Const) f).getValue()==0 || f.toString().equals("0")) {
+            return g.toString();
+        }
+        if (g instanceof Const && ((Const) g).getValue()==0 || g.toString().equals("0")) {
+            return f.toString();
+        }
         return f.toString() + " + " + g.toString();
     }
 

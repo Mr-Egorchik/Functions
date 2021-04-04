@@ -1,6 +1,7 @@
 package functions.meta;
 
 import functions.Function;
+import functions.basic.Const;
 import functions.basic.Log;
 
 //возведение в степень
@@ -17,6 +18,8 @@ public class Pow implements Function {
 
     @Override
     public Function derivative() {
+        if (g instanceof Const)
+            return new Mult (new Mult(new Const(((Const) g).getValue()),f), f.derivative());
         return new Mult(new Pow (f, g), new Sum(new Mult(g.derivative(), new Comp (new Log(Math.E), f)), new Div(new Mult(g, f.derivative()), f)));
 
     }

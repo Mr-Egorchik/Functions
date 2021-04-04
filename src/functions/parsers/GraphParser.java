@@ -82,7 +82,7 @@ public class GraphParser {
                     if (d < 0)
                         return false;
                     numb = new StringBuilder();
-                    m[raw][col] = d;
+                    m[col][raw] = d;
                 } catch (NumberFormatException e) {
                     return false;
                 }

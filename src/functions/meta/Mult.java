@@ -1,6 +1,8 @@
 package functions.meta;
 
 import functions.Function;
+import functions.basic.Const;
+
 //произведение функций
 public class Mult implements Function {
     private final Function f, g;
@@ -27,6 +29,15 @@ public class Mult implements Function {
 
     @Override
     public String toString() {
+        if(f instanceof Const && g instanceof Const) {
+            StringBuilder s = new StringBuilder();
+            s.append((((Const) f).getValue() * ((Const) g).getValue()));
+            return s.toString();
+        }
+        if (f instanceof Const && ((Const) f).getValue()==0)
+            return "0";
+        if (g instanceof Const && ((Const) g).getValue()==0)
+            return "0";
         return "(" + f.toString() + ")" + " * " + "(" + g.toString() + ")";
     }
 }
