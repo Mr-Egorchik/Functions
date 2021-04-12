@@ -22,7 +22,7 @@ public class Main {
         System.out.println(lu[0]);
         System.out.println("U\n");
         System.out.println(lu[1]);
-        System.out.println(Systems.from_p_to_q("AAABF56", 16, 10));
+        System.out.println(Systems.from_p_to_q("FF", 16, 10));
         Function f = new Comp(new Sin(), new Cos());
         System.out.println();
         System.out.println(f);

@@ -16,7 +16,7 @@ public class FunctionParser {
 
     private Map<String, Function > funcNamesMap = new HashMap<>();
     private String[] funcNames = new String[]
-            {"arccos", "arccot", "arcsin", "arctan", "cos", "ch", "ctg", "sin", "sh", "th", "tg", "cth", "abs"};
+            {"arccos", "arcctg", "arcsin", "arctan", "cos", "ch", "ctg", "sin", "sh", "th", "tg", "cth", "abs"};
 
     private char[] ops = new char[]{'+', '-', '*', '/', '^'};
 
